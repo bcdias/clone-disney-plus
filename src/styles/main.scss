@@ -1,17 +1,20 @@
 @use 'variaveis';
 @use 'hero';
 @use 'fontes';
+@use 'shows';
+@use 'planos';
 
 * {
     margin: 0;
     padding: 0;
+    font-family: Avenir, sans-serif;
 }
 
 
 
 body{
     background-color: variaveis.$corDeFundo;
-    font-family: Avenir, sans-serif;
+    
 }
 
 @mixin texto($tamanhoDaFonte: 16px) {
@@ -53,4 +56,18 @@ body{
 
 .titulo--pequeno{
     @include titulo(28px)
+}
+
+.botao {
+    display: block;
+    width: 100%;
+    height: 60px;
+    font-family: 18px;
+    color: variaveis.$corTextoSecundaria;
+    background-color: variaveis.$corDeFundoBotao;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-top: 2vw;
+    margin-bottom: 8px;
 }
