@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const botoes = document.querySelectorAll('[data-aba-botao]');
-    
+    const questions = document.querySelectorAll('[data-faq-question]');
 
     botoes.forEach(botao => {
         botao.addEventListener('click', (botao) => {
@@ -13,7 +13,19 @@ document.addEventListener('DOMContentLoaded', function() {
             botao.target.classList.add('shows__abas__botao--is-active');
         })
     })
+
+
+    questions.forEach(question => {
+        question.addEventListener('click', openAndCloseQuestion)
+    })
 })
+
+function openAndCloseQuestion(element) {
+    const openAndCloseClass  = 'faq__questions__item--is-open'
+    const parentElement = element.target.parentNode
+
+    parentElement.classList.toggle(openAndCloseClass)
+}
 
 function removeBotaoAtivo () {
     const botoes = document.querySelectorAll('[data-aba-botao]');
